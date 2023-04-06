@@ -18,6 +18,14 @@ serve(async (request) => {
     if (remote) {
         console.log("get url remote host:%s", remote)
         url.host = remote
+    } else {
+        let errorObj = {error: "no remote specified"};
+        let errorJSON = JSON.stringify(errorObj);
+        return new Response(errorJSON, {
+            headers: {
+                "content-type": "application/json"
+            }
+        });
     }
 
 
