@@ -3,7 +3,6 @@ import {serve} from "https://deno.land/std@0.181.0/http/server.ts";
 serve(async (request) => {
     const url = new URL(request.url);
 
-
     if (url.pathname === "/") {
         return new Response(await Deno.readTextFile("./Readme.md"), {
             headers: {
@@ -11,6 +10,8 @@ serve(async (request) => {
             },
         });
     }
+
+    console.log("request headers:", request.headers)
 
     const remote = request.headers["remote"] as string | undefined
 
