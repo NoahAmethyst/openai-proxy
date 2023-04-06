@@ -1,4 +1,23 @@
-# OpenAI/ChatGPT 免翻墙代理
+# 免翻墙代理
+
+<span style="color:gray"> 
+根据fork项目改造，如需直接使用请访问源项目
+</span><br>
+
+## 使用
+
+需要在请求头添加
+```
+"remote":${原请求host}
+```
+并把原url的host替换成你部署的公网host
+
+以openai请求为例：
+![img.png](img.png)
+
+# 以下为原项目介绍
+
+
 
 据很多网友反应，**OpenAI 检测到中国的 API
 访问时，会直接封号**。所以我在国外的服务器上搭建了一个代理，用于访问
