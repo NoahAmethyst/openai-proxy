@@ -15,7 +15,7 @@ serve(async (request) => {
     const headers = new Headers(request.headers)
     console.log("get headers:", headers)
     const remote = headers.get("remote")
-    if (remote.length > 0) {
+    if (remote !== null && remote.length > 0) {
         console.log("get url remote host:%s", remote)
         url.host = remote
     } else {
