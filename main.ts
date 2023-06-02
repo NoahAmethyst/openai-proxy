@@ -1,5 +1,5 @@
 import {serve} from "https://deno.land/std@0.181.0/http/server.ts";
-import { acceptWebSocket, isWebSocketCloseEvent } from "https://deno.land/std@0.181.0/ws/mod.ts";
+import { acceptWebSocket, isWebSocketCloseEvent } from "https://deno.land/x/websocket@v0.181.0/mod.ts";
 
 serve(async (request) => {
     const url = new URL(request.url);
