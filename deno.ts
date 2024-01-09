@@ -10,5 +10,13 @@ serve(async (request) => {
     }
 
     url.host = OPENAI_API_HOST;
-    return await fetch(url, request);
+    var resp;
+    try{
+        resp= await fetch(url, request);
+    } catch(e){
+        console.error("Unable to make fetch request:", e.message);
+        return e;
+    }
+    return resp;
+
 });
